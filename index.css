@@ -77,6 +77,7 @@ html, body {
     margin: 0 0;
     background-color: #4B4B4B;
     color: #FFFFFF;
+    cursor: pointer;
 
 }
 .content{
