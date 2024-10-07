@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="hero overlay">
-            <h1 class="hero-head">Find your film</h1>
-            <h2>My Watchlist</h2>
+            <a href="index.html" class="hero-head">Find your film</a>
+            <a href="watchlist.html" class="watchlist-page">My Watchlist</a>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Blade Runner" id="search-input">
@@ -17,15 +17,15 @@
         </div>
         <div class="content">
             <div id="card-section" class="card-section">
-                <!-- <div class="cards">
+                <div class="cards">
                     <img src="${movie.Poster}" class="card-image">
                     <div class="card-contents">
                         <h3 class="movie-name">${movie.Title}</h3>
                         <div class="runtimeGenre">
                             <h4>Year: ${movie.Year}</h4>
                             
-                            <button>+</button>
-                            <h4 class="watchlist">Watchlist</h4>
+                            <button data-watchlist="${movie.imdbID}">+</button>
+                            <h4 class="watchlist" >Watchlist</h4>
                         </div>
                         <h4 class="movie-type">Type: ${movie.Type}</h4>
                         <button data-movie="${movie.imdbID}" id="view-details" class="view-details">View Details</button>
@@ -47,7 +47,7 @@
                                 and have returned to Earth to find their
                                     creator.</p>
                         </div>
-                    </div> -->
+                    </div>
                 <!-- <div class="cards">
                     <img src="images/blade.png" class="card-image">
                     <div class="card-contents">
