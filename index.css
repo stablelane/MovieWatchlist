@@ -128,6 +128,10 @@ html, body {
     align-items: center;
     border: none;
 }
+.runtimeGenre button:active {
+    background-color: #2E2E2F;
+}
+
 .runtimeGenre h4,.movie-type{
     padding-top: 5px;
     font-size: 0.75rem;
@@ -219,12 +223,10 @@ html, body {
     .runtimeGenre button{
         width: 25px;
         height: 25px;
+        margin-left: 90px;
     }
     .runtimeGenre{
         gap: 10px;
-    }
-    .runtimeGenre button{
-        margin-left: 90px;
     }
     .runtimeGenre h4,.movie-type{
         font-size: 1.2rem;

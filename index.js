@@ -73,28 +73,35 @@ function populate(data){
             )
     
 }
-async function addDetails(id){
-    const detailDiv = document.getElementById(id)
-    let details
-    if(!details){
-        details = await getresult(id)
+async function addDetails(id) {
+    const detailDiv = document.getElementById(id);
+    let details;
+
+    if (!details) {
+        details = await getresult(id);
     }
+
+    const rating1 = details.Ratings[0] ? details.Ratings[0].Value : '';
+    const rating2 = details.Ratings[2] ? details.Ratings[2].Value : '';
+
+    detailDiv.innerHTML = `
+        <div class="ratings">
+            <div class="rating-sites">
+                <img src="images/star.png">
+                <p>${rating1}<p>
+            </div>
+            <div class="rating-sites">
+                <img src="images/meta.png">
+                <p>${rating2}<p>
+            </div>
+        </div>
+        <h4>${details.Genre}</h4>
+        <p class="description">${details.Plot}</p>
+    `;
     
-    detailDiv.innerHTML = `<div class="ratings">
-    <div class="rating-sites">
-    <img src="images/star.png">
-    <p>${details.Ratings[0].Value}<p>
-    </div>
-    <div class="rating-sites">
-    <img src="images/meta.png">
-    <p>${details.Ratings[2].Value}<p>
-    </div>
-    
-    </div>
-    <h4>${details.Genre}</h4>
-    <p class="description">${details.Plot}</p>`
-    detailDiv.classList.toggle('hidden')
+    detailDiv.classList.toggle('hidden');
 }
+
 async function getWatchlist(id){
     const movie = await getresult(id)
     return movie
